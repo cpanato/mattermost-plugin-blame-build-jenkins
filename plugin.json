@@ -1,0 +1,65 @@
+{
+    "id": "com.cpanato.blame-build-jenkins",
+    "name": "Blame who broke the build in Jenkins",
+    "description": "This plugin shows the last 3 commiters that possible broke the jenkins build.",
+    "version": "0.0.1",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "darwin-amd64": "server/dist/plugin-darwin-amd64",
+            "windows-amd64": "server/dist/plugin-windows-amd64.exe"
+        }
+    },
+    "settings_schema": {
+        "header": "",
+        "footer": "",
+        "settings": [{
+            "key": "JenkinsServer",
+            "display_name": "Jenkins Server",
+            "type": "text",
+            "help_text": "Set the Jenkins server, ie, https://jenkins.example.com."
+        },
+        {
+            "key": "JenkinsUserName",
+            "display_name": "Jenkins UserName",
+            "type": "text",
+            "help_text": "Set The user to access Jenkins."
+        },
+        {
+            "key": "JenkinsUserToken",
+            "display_name": "Jenkins User Token",
+            "type": "text",
+            "help_text": "Set the Jenkins User Token."
+        },
+        {
+            "key": "JenkinsJob",
+            "display_name": "Jenkins Job to monitor",
+            "type": "text",
+            "help_text": "Set the Jenkins job to monitor."
+        },
+        {
+            "key": "TeamChannel",
+            "display_name": "Team/Channel",
+            "type": "text",
+            "help_text": "Name of the Team and Channel you want to create/use to receive the build jenkin s messages."
+        },
+        {
+            "key": "Username",
+            "display_name": "User",
+            "type": "username",
+            "help_text": "Select the username that this integration is attached to."
+        },
+        {
+            "key": "GitHubToken",
+            "display_name": "GitHub Token",
+            "type": "text",
+            "help_text": "GitHub token to access the github api."
+        },
+        {
+            "key": "GitHubRepositories",
+            "display_name": "GitHub Repositories",
+            "type": "text",
+            "help_text": "GitHub Repositories to get the commiters, separated by comma, ie. `org_name/repo_name,org_name/repo_name`"
+        }]
+    }
+}
