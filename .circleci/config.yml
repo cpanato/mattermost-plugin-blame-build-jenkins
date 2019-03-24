@@ -39,9 +39,10 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - context: cpanato-gh-context
       - run:
-          context: cpanato-gh-context
           name: "Publish Release on GitHub"
+          context: cpanato-gh-context
           command: |
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./dist/com.cpanato.blame-*.tar.gz
 
