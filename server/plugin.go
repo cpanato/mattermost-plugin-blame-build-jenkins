@@ -21,7 +21,7 @@ import (
 const (
 	JENKINS_LASTBUILD_KEY = "_JenkinsLastBuild"
 	BLAME_USERNAME        = "Burnning Jenkins"
-	BLAME_ICON_URL        = "https://wiki.jenkins-ci.org/download/attachments/2916393/fire-jenkins.svg"
+	BLAME_ICON_URL        = "https://raw.githubusercontent.com/jenkins-infra/jenkins.io/master/content/images/logos/fire/fire.png"
 )
 
 type Plugin struct {
