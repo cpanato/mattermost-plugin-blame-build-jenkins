@@ -2,7 +2,7 @@
     "id": "com.cpanato.blame-build-jenkins",
     "name": "Blame who broke the build in Jenkins",
     "description": "This plugin shows the last 3 commiters that possible broke the jenkins build.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "server": {
         "executables": {
             "linux-amd64": "server/dist/plugin-linux-amd64",

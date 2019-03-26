@@ -86,7 +86,7 @@ func (p *Plugin) OnActivate() error {
 
 func (p *Plugin) startCron() {
 	c := cron.New()
-	c.AddFunc("@every 15m", p.checkJenkinsJob)
+	c.AddFunc("@every 20m", p.checkJenkinsJob)
 	go c.Start()
 }
 
@@ -106,7 +106,6 @@ func (p *Plugin) checkJenkinsJob() {
 	}
 
 	lastBuildToChecked, _ := p.API.KVGet(JENKINS_LASTBUILD_KEY)
-	fmt.Println(string(lastBuildToChecked))
 	if lastBuildToChecked == nil {
 		// first time
 		buildIDs, errJenkins := build.GetAllBuildIds()
@@ -170,8 +169,8 @@ func (p *Plugin) checkJenkinsJob() {
 					p.API.LogInfo("Jenkins Job running, will check later...")
 					return
 				}
-				lastBuildToChecked := []byte(strconv.Itoa(int(buildID.Number)))
-				p.API.KVSet(JENKINS_LASTBUILD_KEY, lastBuildToChecked)
+				lastBuildChecked := []byte(strconv.Itoa(int(buildID.Number)))
+				p.API.KVSet(JENKINS_LASTBUILD_KEY, lastBuildChecked)
 			}
 			last3Builds = append(last3Builds, job.IsGood())
 			if i == 2 {

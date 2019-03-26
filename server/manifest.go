@@ -5,5 +5,5 @@ var manifest = struct {
 	Version string
 }{
 	Id:      "com.cpanato.blame-build-jenkins",
-	Version: "0.0.1",
+	Version: "0.0.2",
 }
